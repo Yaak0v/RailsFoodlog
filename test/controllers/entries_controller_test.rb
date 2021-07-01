@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class EntriesControllerTest < ActionDispatch::IntegrationTest
-  setup { @entry = entries(:one) }
+  setup { @entry = entries(:breakfast) }
 
   test 'should get index' do
     get entries_url
@@ -21,8 +21,8 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
                calories: @entry.calories,
                carbohydrates: @entry.carbohydrates,
                meal_type: @entry.meal_type,
-               proteins: @entry.proteins
-             }
+               proteins: @entry.proteins,
+             },
            }
     end
 
@@ -46,8 +46,8 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
               calories: @entry.calories,
               carbohydrates: @entry.carbohydrates,
               meal_type: @entry.meal_type,
-              proteins: @entry.proteins
-            }
+              proteins: @entry.proteins,
+            },
           }
     assert_redirected_to entry_url(@entry)
   end
